@@ -1,12 +1,44 @@
 <template>
   <div class="wishlist-item">
     <p class="wishlist-item__name">{{ product.name }}</p>
-    <p class="nowrap">{{ product.quantity}} x</p>
+    <!-- <p class="nowrap">{{ product.quantity}} x</p> -->
+    <div class="button-container">
+        <button 
+          class="icon icon-remove"
+          @click="removeFromWishlist()"
+          v-if="product_total > 0"
+          data-test="remove"
+          value="remove item"
+          >
+          </button>
+          <span class="total" v-if="product_total > 0">{{ product_total }}</span>
+          <span class="total" v-if="product_total === null">0</span>
+          <button 
+            class="icon icon-add"
+            @click="addToWishlist()"
+            data-test="add"
+            value="add item"
+            >
+          </button>          
+        </div>
   </div>
 </template>
 <script>
 export default {
-  props: ["product"]
+  props: ["product"],
+  methods: {
+    addToWishlist() {
+      this.$store.commit('addToWishlist', this.product)
+    },
+    removeFromWishlist() {
+      this.$store.commit('removeFromWishlist', this.product)
+    }
+  },
+  computed: {
+    product_total(){
+      return this.$store.getters.productQuantity(this.product)
+    }
+  }  
 }
 </script>
 
@@ -31,6 +63,9 @@ export default {
                 height:15px;
                 background:var(--clr-troisieme);
         }
+    }
+    button.icon {
+        font-size:32px;
     }
 }
 </style>
