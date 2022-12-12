@@ -82,7 +82,7 @@ footer {
   font-size:calc(var(--unit)*0.8);
   border-top:10px solid  var(--clr-secondary);
   padding:var(--unit) 0;
-  margin-top:50px;
+  margin-top:80px;
   background-color:#f1f1f1;
 }
 </style>

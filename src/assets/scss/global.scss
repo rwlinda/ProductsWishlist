@@ -1,3 +1,5 @@
+@import "fonts.scss";
+
 :root {
   --unit:1rem;
   --clr-primary: #069;
@@ -41,11 +43,9 @@ html, body {
 
 .button-container {
   display:flex;
-  justify-content:center;
-  gap:var(--unit);
+  justify-content:end;
+  gap:calc(var(--unit)*.5);
   align-items:center;
-  border-top:1px solid var(--clr-primary);
-  padding-top:10px;
 }
 button {
   border:0;
@@ -64,7 +64,16 @@ button {
     background-color:#555;    
     transition:background-color .25s ease-in-out;
   }
+  &.icon {
+        background:transparent;
+        font-size:44px;
+        color:var(--clr-primary);
+        padding:0;
+        &:hover {color:#000;transform:scale(1.05)}
+        &:active {color:#555;}
+  }
 }
 
 // Utilities
 .txt-center {text-align:center;}
+.nowrap {white-space: nowrap;}

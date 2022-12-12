@@ -1,7 +1,7 @@
 <template>
   <div class="wishlist-item">
     <p class="wishlist-item__name">{{ product.name }}</p>
-    <p>{{ product.quantity}} x</p>
+    <p class="nowrap">{{ product.quantity}} x</p>
   </div>
 </template>
 <script>

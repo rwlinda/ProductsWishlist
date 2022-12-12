@@ -28,7 +28,7 @@ export default {
                 transition:all .25s ease-in-out;
         }
         &.filled {
-                background:#090;
+                background:var(--clr-primary);
                 transition:all .25s ease-in-out;
         }
 }
