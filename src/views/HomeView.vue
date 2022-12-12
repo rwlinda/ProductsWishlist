@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    <h1>Create a wishlist of your favorite product</h1>
     <div class="products">    
         <ProductSummaryCard 
         v-for="product in items" 

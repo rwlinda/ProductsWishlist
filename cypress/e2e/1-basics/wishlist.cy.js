@@ -22,7 +22,7 @@ describe('1. add to and remove from wishlist', () => {
   it('2. show/hide wishlist and show text no-items-yet or show added item', () => {
     cy.get('.wishlist').should('not.be.visible')    
     cy.get('[data-test=open-wishlist]').click()
-    cy.get('.wishlist').should('be.visible').contains('No items in your wishlist yet')
+    cy.get('.wishlist').should('be.visible').contains('No products in your wishlist yet')
     cy.get('[data-test=close-wishlist]').click()
 
     cy.get('.products .product button[data-test="add"]').first().click() 

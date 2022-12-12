@@ -14,7 +14,7 @@
   <WishlistView  @toggle="toggleWishlist" :class="{open: openWishlist}" />
   <footer>
     <div class="wrapper">
-    These are fictiteous products.
+    These are fictitious products.
     </div>
   </footer>
 </template>
@@ -52,7 +52,7 @@ header {
   margin-bottom:20px;
 }
 nav {
-  padding: calc(var(--unit)*2);
+  padding: calc(var(--unit)*2) 0;
   display:flex;
   justify-content: space-between;
   align-items: center;
