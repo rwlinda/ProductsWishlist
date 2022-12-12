@@ -41,7 +41,8 @@ html, body {
   box-sizing:border-box;
 }
 
-.button-container {
+.button-container,
+.addremove {
   display:flex;
   justify-content:end;
   gap:calc(var(--unit)*.5);

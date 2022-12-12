@@ -1,31 +1,17 @@
 <template>
   <div class="wishlist-item">
     <p class="wishlist-item__name">{{ product.name }}</p>
-    <!-- <p class="nowrap">{{ product.quantity}} x</p> -->
-    <div class="button-container">
-        <button 
-          class="icon icon-remove"
-          @click="removeFromWishlist()"
-          v-if="product_total > 0"
-          data-test="remove"
-          value="remove item"
-          >
-          </button>
-          <span class="total" v-if="product_total > 0">{{ product_total }}</span>
-          <span class="total" v-if="product_total === null">0</span>
-          <button 
-            class="icon icon-add"
-            @click="addToWishlist()"
-            data-test="add"
-            value="add item"
-            >
-          </button>          
-        </div>
+    <AddRemove :product="product" />
   </div>
 </template>
 <script>
+
+import AddRemove from './AddRemove.vue'
 export default {
   props: ["product"],
+  components:{
+    AddRemove
+  },
   methods: {
     addToWishlist() {
       this.$store.commit('addToWishlist', this.product)
