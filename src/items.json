@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Happy Feet Socks",
+    "description": "Warm feet are happy feet"
+  },
+  {
+    "id": 2,
+    "name": "Ultimate DVD collection",
+    "description": "Never get bored again"
+  },
+  {
+    "id": 3,
+    "name": "Poster",
+    "description": "Decoration"
+  },
+  {
+    "id": 4,
+    "name": "Night at the Museum Flashlight",
+    "description": "In case of darkness this glow-in-the-dark flashlight might come in handy"
+  },
+  {
+    "id": 5,
+    "name": "One Hour Photo bag",
+    "description": "For daily use and cool looks"
+  },
+  {
+    "id": 6,
+    "name": "The Fisher King Plaid",
+    "description": "To stay warm on cold days"
+  }
+]

@@ -1,18 +1,46 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="wrapper">
+    <div class="products">    
+        <ProductSummaryCard 
+        v-for="product in items" 
+        :key="product.id"
+        :product="product" />   
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+// import items from '../data/items.js'
+import ProductSummaryCard from '../components/ProductSummaryCard'
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
-  }
+    ProductSummaryCard
+  },
+  props: ["openwishlist"],
+  data() {
+    return {
+      items: []      
+    }
+  },
+  created() {
+    fetch("/items.json")
+        .then(response => response.json())
+        .then(data => (this.items = data))
+        .catch(function() {console.log("error, films.json could not be retrieved");
+    });
+  },
 }
 </script>
+
+<style lang="scss">
+.products {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+  gap: calc(var(--unit)*2);
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
