@@ -1,0 +1,57 @@
+:root {
+  --unit:1rem;
+  --clr-primary: #069;
+  --clr-secondary: #c1b2b2;
+  --clr-troisieme: #3FC0D4;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #069;
+}
+      
+h1, h2, h3, .icon {  
+  font-family:'Raleway',cursive;
+}
+    
+.wrapper {
+  max-width:1120px;
+  margin:0 var(--unit);
+  @media screen and (min-width: 1120px) {
+    margin:0 auto;
+  }
+}
+
+html, body {
+  padding:0;
+  box-sizing:border-box;
+}
+
+.button-container {
+  display:flex;
+  justify-content:center;
+  gap:var(--unit);
+  align-items:center;
+  border-top:1px solid var(--clr-primary);
+  padding-top:10px;
+}
+button {
+  border:0;
+  outline:0;
+  background:#333;
+  color:#fff;
+  padding:var(--unit);
+  border-radius:calc(var(--unit)/4);
+  &:hover {
+    cursor:pointer;
+    background-color:#000;
+  }
+  &:active {
+    background-color:#555;
+  }
+}
+
+// Utilities
+.txt-center {text-align:center;}
